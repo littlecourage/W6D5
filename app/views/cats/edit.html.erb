@@ -1,0 +1,50 @@
+<h1>Edit Your Cat!!!</h1>
+<form action = "<% cat_url(@cat) %> " method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <label For = 'name'>Name:</label>
+    <input type = 'text' id="name" name = 'cat[name]' value="<%=@cat.name%>">
+  <br>
+  <label>Choose sex: </label>
+    <input type="radio" id="M" name= "cat[sex]" value="M">
+  <label for="M">Male</label>
+    <input type="radio" id="F" name= 'cat[sex]' value="F"> 
+  <label for="female">Female</label>
+  <br>
+
+  <label for="color">Choose a color:</label>
+  <select id="color" name="cat[color]">
+    <option disabled selected value> -- select an option -- </option>
+    <option value="White">white</option>
+    <option value="Black">black</option>
+    <option value="Tabby">tabby</option>
+    <option value="Calico">calico</option>
+  </select>
+  <br>
+
+  <label for ="birth date">Birth Date</label>
+  <input type="date" id="birth date" name="cat[birth_date]" 
+  max = "2020-10-09" min = "1990-10-09">
+
+  <br>
+
+  <label for = "description">Add a memory with your cat:</label>
+    <br>
+    <textarea id="description" name="cat[description]" rows="4" cols="50">
+      <%= %>
+    </textarea>
+  <br>
+<br>
+<input type="submit">
+
+
+</form>
+
+    <!--<%#COLORS.each do |color| %>
+      <%#=<option value="#{color}">color</option>%>
+    <%#end%> -->
+
+<!--
+name is key and value is value 
+for and id should match
+-->
